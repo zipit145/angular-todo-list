@@ -1,12 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
 import { List } from  './list.component'
 import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 describe('List', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        MatSliderModule
+        MatSliderModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        BrowserAnimationsModule
       ],
       declarations: [
         List,

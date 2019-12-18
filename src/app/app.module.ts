@@ -10,6 +10,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { MatButtonModule } from '@angular/material';
     MatSliderModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     Header,
