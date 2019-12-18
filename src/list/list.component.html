@@ -1,4 +1,13 @@
+
+<form class="container" [formGroup]="addNewFormGroup" (ngSubmit)="update()">
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="description">
+    <button type="submit" >Submit</button>
+</form>
+
+
 <div *ngFor="let listItem of listItems">
+
     <mat-card [ngClass]="listItem.isComplete ? 'complete' : 'incomplete'">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
@@ -11,41 +20,9 @@
         </mat-card-content>
         <mat-card-actions>
             <button (click)="toggleComplete(listItem)" mat-raised-button color="accent">{{listItem.isComplete ? 'mark incomplete' : 'mark complete'}}</button>
-            <button (click)="editItem(listItem)" mat-raised-button color="accent">{{listItem.isComplete ? 'mark incomplete' : 'mark complete'}}</button>
+            <button (click)="editItem(listItem)" mat-raised-button color="accent">Edit</button>
         </mat-card-actions>
     </mat-card>      
 </div>
-<button (click)="addItem()" mat-raised-button color="accent">Add Item</button>
 
-<mat-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Personal data
-            </mat-panel-title>
-            <mat-panel-description>
-              Type your name and age
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-      
-          <mat-form-field>
-            <input matInput placeholder="First name">
-          </mat-form-field>
-      
-          <mat-form-field>
-            <input matInput placeholder="Age">
-          </mat-form-field>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-      </mat-accordion>
+ 

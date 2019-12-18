@@ -5,8 +5,11 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import {MatDividerModule} from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,8 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
-    MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatBottomSheetModule,
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   exports: [
     List,
