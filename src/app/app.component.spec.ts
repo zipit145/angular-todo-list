@@ -3,12 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { Header } from  '../header/header.component'
 import { List } from  '../list/list.component'
+import { MatSliderModule } from '@angular/material/slider';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatSliderModule
       ],
       declarations: [
         Header,
