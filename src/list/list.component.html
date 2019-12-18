@@ -5,6 +5,11 @@
     <button type="submit" >Submit</button>
 </form>
 
+<form class="container" [formGroup]="editFormGroup" (ngSubmit)="editItem()">
+        <input type="text" formControlName="name">
+        <input type="text" formControlName="description">
+        <button type="submit" >Edit Selected Item</button>
+</form>
 
 <div *ngFor="let listItem of listItems">
 
@@ -17,12 +22,16 @@
             <p>
                 {{listItem.description}}
             </p>
+
         </mat-card-content>
+
         <mat-card-actions>
             <button (click)="toggleComplete(listItem)" mat-raised-button color="accent">{{listItem.isComplete ? 'mark incomplete' : 'mark complete'}}</button>
-            <button (click)="editItem(listItem)" mat-raised-button color="accent">Edit</button>
+            <button (click)="selectItem(listItem)" mat-raised-button color="accent">{{listItem.selected ? 'selected' : "select"}}</button>
         </mat-card-actions>
     </mat-card>      
 </div>
+<button (click)="deleteItem()" mat-raised-button color="accent">Delete Selected Item</button>
+
 
  
