@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatDividerModule} from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+
 
 describe('List', () => {
   beforeEach(async(() => {
@@ -20,7 +22,8 @@ describe('List', () => {
         BrowserAnimationsModule,
         MatBottomSheetModule,
         MatDividerModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatIconModule
       ],
       declarations: [
         List,
@@ -33,17 +36,16 @@ describe('List', () => {
     const list = fixture.debugElement.componentInstance;
     expect(list).toBeTruthy();
   });
-
-//   it(`should have as title 'angular-list'`, () => {
-//     const fixture = TestBed.createComponent(AppComponent);
-//     const app = fixture.debugElement.componentInstance;
-//     expect(app.title).toEqual('angular-list');
-//   });
-
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('#main').textContent).toContain('Initial list');
-  // });
+  it('should update addName form field to "test"', () => {
+    const fixture = TestBed.createComponent(List);
+    const input = fixture.nativeElement.querySelector('.addName');
+    input.value =  'test'
+    expect(input.value).toBe('test')
+  });
+  it('should update addDescription form field to "test description"', () => {
+    const fixture = TestBed.createComponent(List);
+    const input = fixture.nativeElement.querySelector('.addDescription');
+    input.value =  'test description'
+    expect(input.value).toBe('test description')
+  });
 });

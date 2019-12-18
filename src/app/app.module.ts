@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatDividerModule} from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatBottomSheetModule,
     MatDividerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    
   ],
   exports: [
     Header,

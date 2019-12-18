@@ -28,5 +28,4 @@ describe('Header', () => {
     const menuText = fixture.nativeElement.innerText;
     expect(menuText).toContain('Menu');
   });
-
 });

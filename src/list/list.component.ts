@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { FormControl, FormGroup } from '@angular/forms';
-
-
 
 
 @Component({
@@ -24,15 +21,15 @@ export class List implements OnInit {
     listItems = [
         {
             id: 1,
-            name: "todo1",
-            description: "more detail on to do",
+            name: "Build To Do List for PGI",
+            description: "Use Angular 7+, Typescript, Unit Testing, Use Material Angular. Needs to create to dos, mark to dos complete, edit to dos, and add new items to list",
             isComplete: false,
             selected: false
         },
         {
             id: 2,
-            name: "todo2",
-            description: "more detail on to do",
+            name: "Submit To Do List Github",
+            description: "Send to James",
             isComplete: true,
             selected: false
         },
@@ -46,7 +43,6 @@ export class List implements OnInit {
     }
 
     update() {
-
         let newItem = {
             id: this.listItems.length+1,
             name: this.addNewFormGroup.value.name,
@@ -54,24 +50,8 @@ export class List implements OnInit {
             isComplete: false,
             selected: false
         }
-        console.warn(newItem);
-        console.warn(this.addNewFormGroup.value);
         this.listItems.push(newItem)
     }
-    edit() {
-        this.listItems.map(item => {
-            if(item.id === this.editFormGroup.value.id) {
-                item = {
-                    id: item.id,
-                    name: this.editFormGroup.value.name,
-                    description:this.editFormGroup.value.description,
-                    isComplete: false,
-                    selected: false
-                }
-            }
-        })
-
-    };
 
     selectItem(listItem) {
         if(listItem.selected !== true) {
@@ -87,11 +67,11 @@ export class List implements OnInit {
     }
     deleteItem() {
         if(this.selectedItem.id) {
-            let newList = this.listItems.map(item => {
+            let newList = []
+            this.listItems.map(item => {
                 if(item.id !== this.selectedItem.id){
-                    return item = item
+                    newList.push(item)
                 }    
-
             })
            this.listItems = newList
         } else {
@@ -113,18 +93,15 @@ export class List implements OnInit {
                         isComplete: false,
                         selected: true
                     }
-
                 } else {
                     return item = item
                 }
-
             })
             this.listItems = newList
         } else {
             alert ("please select an item to edit first")
         }
     }
-      
   constructor() { 
     
   }
