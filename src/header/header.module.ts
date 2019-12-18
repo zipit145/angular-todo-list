@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { Header } from './header.component'
+import { Header } from './header.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material';
+
 
 
 @NgModule({
@@ -9,12 +13,15 @@ import { Header } from './header.component'
     Header
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     Header
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [Header]
 })
 export class HeaderModule { }

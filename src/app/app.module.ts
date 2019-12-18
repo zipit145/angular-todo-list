@@ -7,6 +7,10 @@ import { Header } from '../header/header.component'
 import { List } from '../list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     Header,

@@ -4,13 +4,19 @@ import { AppComponent } from './app.component';
 import { Header } from  '../header/header.component'
 import { List } from  '../list/list.component'
 import { MatSliderModule } from '@angular/material/slider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        MatSliderModule
+        MatSliderModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule
       ],
       declarations: [
         Header,
